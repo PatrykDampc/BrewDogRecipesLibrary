@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BrewDog Beer Library</string>
+    <string name="alc">"Alcohol: "</string>
+    <string name="first_brewed">"First brewed: "</string>
+</resources>
