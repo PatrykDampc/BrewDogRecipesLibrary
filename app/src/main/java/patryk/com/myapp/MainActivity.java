@@ -197,8 +197,9 @@ public class MainActivity extends AppCompatActivity {
                                 for(int j=0; j<foodPairing.length(); j++){
                                     sb.append("- " + foodPairing.get(j) + "\n");
                                 }
-
                                 beer.setFoodPairing(sb.toString());
+
+                                beer.setId(beerJsonObject.getString("id"));
                                 beer.setName(beerJsonObject.getString("name"));
                                 beer.setIbu(beerJsonObject.getString("ibu"));
                                 beer.setAlc(beerJsonObject.getString("abv"));
@@ -244,6 +245,18 @@ public class MainActivity extends AppCompatActivity {
                                     sb2.append(mal.getString("name") +" - "+ val.getString("value") + "kg" + "\n");
                                 }
                                 beer.setMalt(sb2.toString());
+
+                                JSONArray hops = ingredients.getJSONArray("hops");
+                                StringBuilder sb3 = new StringBuilder();
+                                for(int j=0; j<hops.length(); j++){
+                                    JSONObject hop = hops.getJSONObject(j);
+                                    JSONObject val = hop.getJSONObject("amount");
+                                    sb3.append(hop.getString("name") +" - "+ val.getString("value") + "g, at: " +
+                                            hop.getString("add") +", attribute: "+ hop.getString("attribute") + "\n");
+                                }
+                                beer.setHops(sb3.toString());
+
+
 
 
                                 System.out.println("      "  +  sb2.toString()  );

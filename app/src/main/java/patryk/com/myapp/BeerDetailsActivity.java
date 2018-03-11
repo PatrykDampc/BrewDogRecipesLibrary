@@ -55,13 +55,14 @@ public class BeerDetailsActivity extends AppCompatActivity {
         srm.setText(beer.getSrm() + " / " + beer.getEbc() + " EBC");
         ph.setText(beer.getPh());
         attenuationLevel.setText(beer.getAttenuationLevel());
-        finalVolume.setText(beer.getFinalVolume());
-        boilVolume.setText(beer.getBoilVolume());
+        finalVolume.setText(beer.getFinalVolume() + "L");
+        boilVolume.setText(beer.getBoilVolume() + "L");
         mashTempDuration.setText(mashTimeDurationCombined);
         fermentationTemperature.setText(beer.getFermentationTemperature() + "℃");
         brewersTips.setText(beer.getBrewersTips());
         contributedBy.setText("Contributed by " + beer.getContributedBy());
         malt.setText(beer.getMalt());
+        hops.setText(beer.getHops());
 
 
         Picasso.with(getApplicationContext())
