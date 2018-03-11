@@ -13,9 +13,166 @@ public class Beer implements Serializable {
 
     }
 
-    private String name, imgUrl, ibu, alc, yeast, firstBrewed, description, foodPairing, id;
+    private String name;
+    private String imgUrl;
+    private String ibu;
+    private String alc;
+    private String yeast;
+    private String firstBrewed;
+    private String description;
+    private String foodPairing;
+    private String id;
+    private String tagLine;
+    private String targetFG;
+    private String targedOG;
+    private String ebc;
+    private String srm;
+    private String ph;
+    private String attenuationLevel;
+    private String finalVolume;
+    private String boilVolume;
+    private String mashTemperature;
+    private String mashduration;
+    private String fermentationTemperature;
+    private String brewersTips;
+    private String contributedBy;
+    private String malt;
+
+    public String getMalt() {
+        return malt;
+    }
+
+    public void setMalt(String malt) {
+        this.malt = malt;
+    }
+
+    public String getHops() {
+        return hops;
+    }
+
+    public void setHops(String hops) {
+        this.hops = hops;
+    }
+
+    private String hops;
 
 
+
+    public static long getID() {
+        return ID;
+    }
+
+    public String getTagLine() {
+        return tagLine;
+    }
+
+    public void setTagLine(String tagLine) {
+        this.tagLine = tagLine;
+    }
+
+    public String getTargetFG() {
+        return targetFG;
+    }
+
+    public void setTargetFG(String targetFG) {
+        this.targetFG = targetFG;
+    }
+
+    public String getTargedOG() {
+        return targedOG;
+    }
+
+    public void setTargedOG(String targedOG) {
+        this.targedOG = targedOG;
+    }
+
+    public String getEbc() {
+        return ebc;
+    }
+
+    public void setEbc(String ebc) {
+        this.ebc = ebc;
+    }
+
+    public String getSrm() {
+        return srm;
+    }
+
+    public void setSrm(String srm) {
+        this.srm = srm;
+    }
+
+    public String getPh() {
+        return ph;
+    }
+
+    public void setPh(String ph) {
+        this.ph = ph;
+    }
+
+    public String getAttenuationLevel() {
+        return attenuationLevel;
+    }
+
+    public void setAttenuationLevel(String attenuationLevel) {
+        this.attenuationLevel = attenuationLevel;
+    }
+
+    public String getFinalVolume() {
+        return finalVolume;
+    }
+
+    public void setFinalVolume(String finalVolume) {
+        this.finalVolume = finalVolume;
+    }
+
+    public String getBoilVolume() {
+        return boilVolume;
+    }
+
+    public void setBoilVolume(String boilVolume) {
+        this.boilVolume = boilVolume;
+    }
+
+    public String getMashTemperature() {
+        return mashTemperature;
+    }
+
+    public void setMashTemperature(String mashTemperature) {
+        this.mashTemperature = mashTemperature;
+    }
+
+    public String getMashduration() {
+        return mashduration;
+    }
+
+    public void setMashduration(String mashduration) {
+        this.mashduration = mashduration;
+    }
+
+    public String getFermentationTemperature() {
+        return fermentationTemperature;
+    }
+
+    public void setFermentationTemperature(String fermentationTemperature) {
+        this.fermentationTemperature = fermentationTemperature;
+    }
+
+    public String getBrewersTips() {
+        return brewersTips;
+    }
+
+    public void setBrewersTips(String brewersTips) {
+        this.brewersTips = brewersTips;
+    }
+
+    public String getContributedBy() {
+        return contributedBy;
+    }
+
+    public void setContributedBy(String contributedBy) {
+        this.contributedBy = contributedBy;
+    }
 
 
     public String getId() {
