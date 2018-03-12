@@ -37,6 +37,11 @@ public class Beer implements Serializable {
     private String brewersTips;
     private String contributedBy;
     private String malt;
+    private String hops;
+
+
+
+
 
     public String getMalt() {
         return malt;
@@ -53,10 +58,6 @@ public class Beer implements Serializable {
     public void setHops(String hops) {
         this.hops = hops;
     }
-
-    private String hops;
-
-
 
     public static long getID() {
         return ID;
@@ -173,7 +174,6 @@ public class Beer implements Serializable {
     public void setContributedBy(String contributedBy) {
         this.contributedBy = contributedBy;
     }
-
 
     public String getId() {
         return id;

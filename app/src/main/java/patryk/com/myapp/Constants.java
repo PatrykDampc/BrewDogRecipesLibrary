@@ -5,8 +5,6 @@ package patryk.com.myapp;
  */
 
 public class Constants {
-    public static final String BASE_API_URL = "https://api.punkapi.com/v2/";
-    public static final String BEER_LIST_URL_ENDPOINT = "beers";
-    public static final String BEER_LIST_NEXR_PAGE = "?page=";
+    public static final String BASE_API_URL = "https://api.punkapi.com/v2/beers?";
 
 }
