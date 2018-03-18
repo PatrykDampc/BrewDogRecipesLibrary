@@ -1,36 +1,32 @@
-package patryk.com.myapp;
+package patryk.com.myapp.presenter;
 
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.github.aakira.expandablelayout.ExpandableLinearLayout;
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
 import com.squareup.picasso.Picasso;
 
-
-/**
- * Created by patryk on 06.03.2018.
- */
+import patryk.com.myapp.R;
+import patryk.com.myapp.model.Beer;
 
 public class BeerDetailsActivity extends AppCompatActivity {
 
     private Beer beer;
 
-    private ImageView beerImageView;
+    private ImageView beerImageView, arrow;
     private TextView beerName, ibu, alc, yeast, firstBrewed, description, foodPairing, id, tagLine, targetFG, targedOG,
             srm, ph, attenuationLevel, finalVolume, boilVolume, mashTempDuration, fermentationTemperature, brewersTips, contributedBy, malt, hops;
     private ExpandableRelativeLayout beerBreweryInfoLayout;
     private int rotationAngle = 0;
-    private ImageView arrow;
+    Intent intent;
 
    private  String mashTimeDurationCombined;
 
@@ -39,6 +35,7 @@ public class BeerDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_activity);
 
+        intent = new Intent(this, BeerDetailsImagePreviewActivity.class);
         beer = (Beer) getIntent().getSerializableExtra("beer");
         setUpViews();
         mashTimeDurationCombined = beer.getMashTemperature() + "℃ / " + beer.getMashduration() + "min";
@@ -66,11 +63,20 @@ public class BeerDetailsActivity extends AppCompatActivity {
         malt.setText(beer.getMalt());
         hops.setText(beer.getHops());
 
-
         Picasso.with(getApplicationContext())
                 .load(beer.getImgUrl())
                 .into(beerImageView);
         beerBreweryInfoLayout.toggle(); // toggle expand and collapse
+
+        intent.putExtra("imageUrl", beer.getImgUrl());
+        beerImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 

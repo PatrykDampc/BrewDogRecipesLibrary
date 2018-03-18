@@ -1,4 +1,4 @@
-package patryk.com.myapp;
+package patryk.com.myapp.utils;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,9 +13,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-/**
- * Created by patryk on 01.03.2018.
- */
+import patryk.com.myapp.R;
+import patryk.com.myapp.model.Beer;
+import patryk.com.myapp.presenter.BeerDetailsActivity;
 
 public class BeerRecyclerViewAdapter extends RecyclerView.Adapter<BeerRecyclerViewAdapter.ViewHolder> {
     private ArrayList<Beer> beerList;
@@ -42,7 +42,6 @@ public class BeerRecyclerViewAdapter extends RecyclerView.Adapter<BeerRecyclerVi
         Picasso.with(context).load(imageUrl).into(holder.beerImage);
         holder.alc.setText(context.getString(R.string.alc) +" "+ beer.getAlc() + "%");
         holder.firstBrewed.setText(context.getString(R.string.first_brewed) + beer.getFirstBrewed());
-
 
 
 
@@ -76,6 +75,7 @@ public class BeerRecyclerViewAdapter extends RecyclerView.Adapter<BeerRecyclerVi
                     Beer beer = beerList.get(getAdapterPosition());
                     Intent intent = new Intent(context, BeerDetailsActivity.class);
                     intent.putExtra("beer", beer);
+
                     ctx.startActivity(intent);
                 }
             });

@@ -1,4 +1,4 @@
-package patryk.com.myapp;
+package patryk.com.myapp.utils;
 
 /**
  * Created by patryk on 01.03.2018.

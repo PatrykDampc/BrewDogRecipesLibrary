@@ -217,7 +217,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@android:drawable/arrow_down_float" />
+                    app:srcCompat="@android:drawable/arrow_down_float"
+                    android:transitionName="beerimg"/>
 
             </android.support.constraint.ConstraintLayout>
 

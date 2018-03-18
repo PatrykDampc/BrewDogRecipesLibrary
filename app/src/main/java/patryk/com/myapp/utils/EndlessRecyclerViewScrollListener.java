@@ -1,4 +1,4 @@
-package patryk.com.myapp;
+package patryk.com.myapp.utils;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;

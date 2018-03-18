@@ -1,4 +1,4 @@
-package patryk.com.myapp;
+package patryk.com.myapp.model;
 
 import java.io.Serializable;
 
