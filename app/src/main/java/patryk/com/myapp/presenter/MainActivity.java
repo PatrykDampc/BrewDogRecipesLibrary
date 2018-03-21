@@ -49,16 +49,18 @@ public class MainActivity extends AppCompatActivity {
 
         jsonDataCollector = new JsonDataCollector(this);
         beerList = new ArrayList<>();
+        setUpRecyclerViewAndAdapter();
+        makeRequest();
 
+    }
+
+    private void setUpRecyclerViewAndAdapter() {
         recyclerView = findViewById(R.id.recyclerViewID);
         recyclerView.setHasFixedSize(true);
         linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         beerRecyclerViewAdapter = new BeerRecyclerViewAdapter(beerList, this);
         recyclerView.setAdapter(beerRecyclerViewAdapter);
-
-        makeRequest();
-
     }
 
     private void makeRequest() {
