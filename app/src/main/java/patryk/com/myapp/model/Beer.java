@@ -2,12 +2,26 @@ package patryk.com.myapp.model;
 
 import java.io.Serializable;
 
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+
 /**
  * Created by patryk on 01.03.2018.
  */
 
-public class Beer implements Serializable {
+public class Beer extends RealmObject implements Serializable {
     private static final long ID = 1L;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @PrimaryKey
+    private int id;
 
     public Beer() {
 
@@ -21,7 +35,6 @@ public class Beer implements Serializable {
     private String firstBrewed;
     private String description;
     private String foodPairing;
-    private String id;
     private String tagLine;
     private String targetFG;
     private String targedOG;
@@ -173,14 +186,6 @@ public class Beer implements Serializable {
 
     public void setContributedBy(String contributedBy) {
         this.contributedBy = contributedBy;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getYeast() {

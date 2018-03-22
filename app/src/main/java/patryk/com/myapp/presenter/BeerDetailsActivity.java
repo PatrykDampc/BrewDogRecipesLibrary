@@ -35,12 +35,24 @@ public class BeerDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_activity);
 
-        intent = new Intent(this, BeerDetailsImagePreviewActivity.class);
         beer = (Beer) getIntent().getSerializableExtra("beer");
         setUpViews();
-        mashTimeDurationCombined = beer.getMashTemperature() + "℃ / " + beer.getMashduration() + "min";
-        System.out.println(mashTimeDurationCombined);
+        fetchViews();
+        intent = new Intent(this, BeerDetailsImagePreviewActivity.class);
+        beerImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent);
+            }
+        });
 
+
+
+
+    }
+
+    private void fetchViews() {
+        mashTimeDurationCombined = beer.getMashTemperature() + "℃ / " + beer.getMashduration() + "min";
         beerName.setText(beer.getName());
         alc.setText("Alcohol: " + beer.getAlc() + "%");
         ibu.setText("IBU: " + beer.getIbu());
@@ -69,15 +81,6 @@ public class BeerDetailsActivity extends AppCompatActivity {
         beerBreweryInfoLayout.toggle(); // toggle expand and collapse
 
         intent.putExtra("imageUrl", beer.getImgUrl());
-        beerImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(intent);
-            }
-        });
-
-
-
     }
 
     public void expandableButton(View view) {

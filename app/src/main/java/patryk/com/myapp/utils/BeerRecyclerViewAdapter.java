@@ -12,16 +12,17 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import patryk.com.myapp.R;
 import patryk.com.myapp.model.Beer;
 import patryk.com.myapp.presenter.BeerDetailsActivity;
 
 public class BeerRecyclerViewAdapter extends RecyclerView.Adapter<BeerRecyclerViewAdapter.ViewHolder> {
-    private ArrayList<Beer> beerList;
+    private List<Beer> beerList;
     private Context context;
 
-    public BeerRecyclerViewAdapter(ArrayList<Beer> beerList, Context context) {
+    public BeerRecyclerViewAdapter(List<Beer> beerList, Context context) {
         this.beerList = beerList;
         this.context = context;
     }

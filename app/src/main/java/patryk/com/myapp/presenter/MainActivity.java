@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.SearchView;
 import java.util.ArrayList;
+import java.util.List;
 
 import patryk.com.myapp.utils.BeerRecyclerViewAdapter;
 import patryk.com.myapp.R;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private JsonDataCollector jsonDataCollector;
 
     private int alcFromV, alcToV, ibuFromV, ibuToV;
-    private ArrayList<Beer> beerList;
+    private List<Beer> beerList;
     private String url = Constants.BASE_API_URL;
 
 

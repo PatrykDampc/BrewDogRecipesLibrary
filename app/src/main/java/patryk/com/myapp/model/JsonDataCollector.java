@@ -15,6 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import patryk.com.myapp.utils.BeerRecyclerViewAdapter;
 
@@ -36,7 +37,7 @@ public class JsonDataCollector {
 
 
 
-    public void response(String url, int page, final BeerRecyclerViewAdapter beerRecyclerViewAdapter, final ArrayList<Beer> beerList) {
+    public void response(String url, int page, final BeerRecyclerViewAdapter beerRecyclerViewAdapter, final List<Beer> beerList) {
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET,
@@ -58,12 +59,12 @@ public class JsonDataCollector {
                                 }
                                 beer.setFoodPairing(sb.toString());
 
-                                beer.setId(beerJsonObject.getString("id"));
+
                                 beer.setName(beerJsonObject.getString("name"));
                                 beer.setIbu(beerJsonObject.getString("ibu"));
                                 beer.setAlc(beerJsonObject.getString("abv"));
                                 beer.setImgUrl(beerJsonObject.getString("image_url"));
-                                beer.setId(beerJsonObject.getString("id"));
+
                                 beer.setDescription(beerJsonObject.getString("description"));
                                 beer.setFirstBrewed(beerJsonObject.getString("first_brewed"));
                                 beer.setTagLine(beerJsonObject.getString("tagline"));
