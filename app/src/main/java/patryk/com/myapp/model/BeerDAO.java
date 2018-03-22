@@ -1,13 +1,10 @@
-package patryk.com.myapp.model.DataBase;
+package patryk.com.myapp.model;
 
 import android.content.Context;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
-import patryk.com.myapp.model.Beer;
 
 /**
  * Created by patryk on 22.03.2018.

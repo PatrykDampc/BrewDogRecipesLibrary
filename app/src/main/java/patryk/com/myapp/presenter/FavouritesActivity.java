@@ -9,7 +9,7 @@ import java.util.List;
 
 import patryk.com.myapp.R;
 import patryk.com.myapp.model.Beer;
-import patryk.com.myapp.model.DataBase.BeerDAO;
+import patryk.com.myapp.model.BeerDAO;
 import patryk.com.myapp.utils.BeerRecyclerViewAdapter;
 
 public class FavouritesActivity extends AppCompatActivity {

@@ -39,12 +39,9 @@ public class MainActivity extends AppCompatActivity {
     private EditText alcFrom, alcTo, ibuFrom, ibuTo;
     private SearchView searchView;
     private JsonDataCollector jsonDataCollector;
-
     private int alcFromV, alcToV, ibuFromV, ibuToV;
     private List<Beer> beerList;
     private String url = Constants.BASE_API_URL;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,11 +72,9 @@ public class MainActivity extends AppCompatActivity {
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
                 page++;
                 jsonDataCollector.response(url,page++, beerRecyclerViewAdapter, beerList);
-
             }
         };
         recyclerView.addOnScrollListener(scrollListener);
-        System.out.println("                                        " + url);
     }
 
     private void showFilterDialog() {
@@ -145,16 +140,13 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.filterButtonID:
                     showFilterDialog();
-                // User chose the "Settings" item, show the app settings UI...
                 return true;
             case R.id.favouritesButtonListID:
                     startActivity(new Intent(MainActivity.this, FavouritesActivity.class));
-                Toast.makeText(MainActivity.this, "favourites", Toast.LENGTH_SHORT).show();
             default:
                 // If we got here, the user's action was not recognized.
                 // Invoke the superclass to handle it.
                 return super.onOptionsItemSelected(item);
-
         }
     }
 

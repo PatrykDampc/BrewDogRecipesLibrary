@@ -9,34 +9,31 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
-import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
 import patryk.com.myapp.R;
 import patryk.com.myapp.model.Beer;
-import patryk.com.myapp.model.DataBase.BeerDAO;
+import patryk.com.myapp.model.BeerDAO;
 
 public class BeerDetailsActivity extends AppCompatActivity {
 
     private Beer beer;
-
     private ImageView beerImageView, arrow;
-    private TextView beerName, ibu, alc, yeast, firstBrewed, description, foodPairing, tagLine, targetFG, targedOG,
-            srm, ph, attenuationLevel, finalVolume, boilVolume, mashTempDuration, fermentationTemperature, brewersTips, contributedBy, malt, hops;
+    private TextView beerName, ibu, alc, yeast, firstBrewed, description, foodPairing, tagLine,
+                    targetFG, targedOG, srm, ph, attenuationLevel, finalVolume, boilVolume,
+                    mashTempDuration, fermentationTemperature, brewersTips, contributedBy, malt, hops;
+    private  String mashTimeDurationCombined;
     private ExpandableRelativeLayout beerBreweryInfoLayout;
     private int rotationAngle = 0;
-    private int id;
-    Intent intent;
-    BeerDAO beerDAO;
-    Menu menu;
+    private BeerDAO beerDAO;
+    private Menu menu;
+    private Intent intent;
 
-   private  String mashTimeDurationCombined;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,9 +45,9 @@ public class BeerDetailsActivity extends AppCompatActivity {
 //        beer = gson.fromJson(beerAsString, Beer.class);
         beer = getIntent().getExtras().getParcelable("beer");
 
-
         setUpViews();
         fetchViews();
+        beerDAO = new BeerDAO(this);
 
 
         intent = new Intent(this, BeerDetailsImagePreviewActivity.class);
@@ -61,10 +58,6 @@ public class BeerDetailsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        beerDAO = new BeerDAO(this);
-
-
-
 
     }
 
@@ -109,7 +102,6 @@ public class BeerDetailsActivity extends AppCompatActivity {
         beerBreweryInfoLayout.toggle(); // toggle expand and collapse
 
     }
-
 
     private void setUpViews() {
         beerBreweryInfoLayout  = (ExpandableRelativeLayout) findViewById(R.id.breweryRelativeLayoutID);
