@@ -25,7 +25,7 @@ public class FavouritesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favourites);
 
-        beerDAO = new BeerDAO(this);
+        beerDAO = new BeerDAO();
         beerList = beerDAO.getAllBeers();
 
         setUpRecyclerViewAndAdapter();

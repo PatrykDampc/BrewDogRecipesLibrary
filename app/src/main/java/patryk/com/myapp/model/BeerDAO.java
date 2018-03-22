@@ -12,22 +12,18 @@ import io.realm.RealmResults;
 
 public class BeerDAO {
 
-    private Context context;
     private Realm realm;
 
 
 
-    public BeerDAO(Context context) {
-        this.context = context;
-
-        Realm.init(context);
+    public BeerDAO() {
         realm = Realm.getDefaultInstance();
-
     }
 
     public void insertBeer(Beer beer){
         realm.beginTransaction();
         realm.createObject(Beer.class, beer.getId());
+        realm.copyToRealmOrUpdate(beer);
         realm.commitTransaction();
     }
 

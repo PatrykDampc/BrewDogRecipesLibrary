@@ -47,7 +47,7 @@ public class BeerDetailsActivity extends AppCompatActivity {
 
         setUpViews();
         fetchViews();
-        beerDAO = new BeerDAO(this);
+        beerDAO = new BeerDAO();
 
 
         intent = new Intent(this, BeerDetailsImagePreviewActivity.class);
