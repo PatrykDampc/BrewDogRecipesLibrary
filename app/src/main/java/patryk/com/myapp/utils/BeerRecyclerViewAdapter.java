@@ -9,8 +9,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,8 +77,9 @@ public class BeerRecyclerViewAdapter extends RecyclerView.Adapter<BeerRecyclerVi
                 public void onClick(View v) {
                     Beer beer = beerList.get(getAdapterPosition());
                     Intent intent = new Intent(context, BeerDetailsActivity.class);
-                    intent.putExtra("beer", beer);
-
+                    Gson gson = new Gson();
+                    String beerAsString = gson.toJson(beer);
+                    intent.putExtra("beer", beerAsString);
                     ctx.startActivity(intent);
                 }
             });

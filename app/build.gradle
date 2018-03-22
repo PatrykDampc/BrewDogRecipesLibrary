@@ -31,4 +31,5 @@ dependencies {
     implementation 'com.android.support:cardview-v7:26.1.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.github.aakira:expandable-layout:1.6.0@aar'
+    compile 'com.google.code.gson:gson:2.6.2'
 }

@@ -1,5 +1,8 @@
 package patryk.com.myapp.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 
 import io.realm.RealmObject;
@@ -9,8 +12,8 @@ import io.realm.annotations.PrimaryKey;
  * Created by patryk on 01.03.2018.
  */
 
-public class Beer extends RealmObject implements Serializable {
-    private static final long ID = 1L;
+public class Beer extends RealmObject implements Parcelable {
+
 
     public Beer() {
 
@@ -44,6 +47,46 @@ public class Beer extends RealmObject implements Serializable {
     @PrimaryKey
     private String id;
 
+    protected Beer(Parcel in) {
+        name = in.readString();
+        imgUrl = in.readString();
+        ibu = in.readString();
+        alc = in.readString();
+        yeast = in.readString();
+        firstBrewed = in.readString();
+        description = in.readString();
+        foodPairing = in.readString();
+        tagLine = in.readString();
+        targetFG = in.readString();
+        targedOG = in.readString();
+        ebc = in.readString();
+        srm = in.readString();
+        ph = in.readString();
+        attenuationLevel = in.readString();
+        finalVolume = in.readString();
+        boilVolume = in.readString();
+        mashTemperature = in.readString();
+        mashduration = in.readString();
+        fermentationTemperature = in.readString();
+        brewersTips = in.readString();
+        contributedBy = in.readString();
+        malt = in.readString();
+        hops = in.readString();
+        id = in.readString();
+    }
+
+    public static final Creator<Beer> CREATOR = new Creator<Beer>() {
+        @Override
+        public Beer createFromParcel(Parcel in) {
+            return new Beer(in);
+        }
+
+        @Override
+        public Beer[] newArray(int size) {
+            return new Beer[size];
+        }
+    };
+
     public String getId() {
         return id;
     }
@@ -68,9 +111,6 @@ public class Beer extends RealmObject implements Serializable {
         this.hops = hops;
     }
 
-    public static long getID() {
-        return ID;
-    }
 
     public String getTagLine() {
         return tagLine;
@@ -246,5 +286,39 @@ public class Beer extends RealmObject implements Serializable {
 
     public void setIbu(String ibu) {
         this.ibu = ibu;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeString(imgUrl);
+        dest.writeString(ibu);
+        dest.writeString(alc);
+        dest.writeString(yeast);
+        dest.writeString(firstBrewed);
+        dest.writeString(description);
+        dest.writeString(foodPairing);
+        dest.writeString(tagLine);
+        dest.writeString(targetFG);
+        dest.writeString(targedOG);
+        dest.writeString(ebc);
+        dest.writeString(srm);
+        dest.writeString(ph);
+        dest.writeString(attenuationLevel);
+        dest.writeString(finalVolume);
+        dest.writeString(boilVolume);
+        dest.writeString(mashTemperature);
+        dest.writeString(mashduration);
+        dest.writeString(fermentationTemperature);
+        dest.writeString(brewersTips);
+        dest.writeString(contributedBy);
+        dest.writeString(malt);
+        dest.writeString(hops);
+        dest.writeString(id);
     }
 }

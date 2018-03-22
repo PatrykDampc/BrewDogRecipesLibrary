@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
+import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
 import patryk.com.myapp.R;
@@ -42,7 +43,11 @@ public class BeerDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_activity);
 
-        beer = (Beer) getIntent().getSerializableExtra("beer");
+        Gson gson = new Gson();
+        String beerAsString = getIntent().getStringExtra("beer");
+        beer = gson.fromJson(beerAsString, Beer.class);
+
+
         setUpViews();
         fetchViews();
 
