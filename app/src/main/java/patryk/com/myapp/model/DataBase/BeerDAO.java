@@ -30,17 +30,16 @@ public class BeerDAO {
 
     public void insertBeer(Beer beer){
         realm.beginTransaction();
-        beer = realm.createObject(Beer.class);
-        beer.setId(generateId());
+        realm.createObject(Beer.class, beer.getId());
         realm.commitTransaction();
     }
 
-    public Beer getBeerById(int id){
+    public Beer getBeerById(String id){
         Beer beer = realm.where(Beer.class).equalTo("id", id).findFirst();
         return beer;
     }
 
-    public void deleteBeerById(final long id){
+    public void deleteBeerById(final String id){
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -56,7 +55,7 @@ public class BeerDAO {
     }
 
 
-    public List<Beer> getnotesLike(String text){
+    public List<Beer> getBeersLike(String text){
         RealmResults<Beer> results = realm.where(Beer.class).contains("name", text).findAll();
         return results;
     }
@@ -73,9 +72,6 @@ public class BeerDAO {
     }
 
 
-    private int generateId() {
-        return realm.where(Beer.class).max("id").intValue() + 1;
-    }
 
     public void close() {
         realm.close();

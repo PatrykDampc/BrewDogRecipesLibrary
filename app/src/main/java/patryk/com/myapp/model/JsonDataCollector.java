@@ -64,7 +64,7 @@ public class JsonDataCollector {
                                 beer.setIbu(beerJsonObject.getString("ibu"));
                                 beer.setAlc(beerJsonObject.getString("abv"));
                                 beer.setImgUrl(beerJsonObject.getString("image_url"));
-
+                                beer.setId(beerJsonObject.getString("id"));
                                 beer.setDescription(beerJsonObject.getString("description"));
                                 beer.setFirstBrewed(beerJsonObject.getString("first_brewed"));
                                 beer.setTagLine(beerJsonObject.getString("tagline"));

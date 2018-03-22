@@ -3,6 +3,7 @@ package patryk.com.myapp.presenter;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.SearchView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -144,6 +147,9 @@ public class MainActivity extends AppCompatActivity {
                     showFilterDialog();
                 // User chose the "Settings" item, show the app settings UI...
                 return true;
+            case R.id.favouritesButtonListID:
+                    startActivity(new Intent(MainActivity.this, FavouritesActivity.class));
+                Toast.makeText(MainActivity.this, "favourites", Toast.LENGTH_SHORT).show();
             default:
                 // If we got here, the user's action was not recognized.
                 // Invoke the superclass to handle it.

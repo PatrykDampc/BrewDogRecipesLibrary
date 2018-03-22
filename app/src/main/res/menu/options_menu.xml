@@ -11,7 +11,7 @@
 
     <item
         android:title="favs"
-        android:id="@+id/favouritesButtonID"
+        android:id="@+id/favouritesButtonListID"
         android:icon="@drawable/ic_heart_white_48dp"
         app:showAsAction="ifRoom"/>
     <item

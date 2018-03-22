@@ -12,17 +12,6 @@ import io.realm.annotations.PrimaryKey;
 public class Beer extends RealmObject implements Serializable {
     private static final long ID = 1L;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    @PrimaryKey
-    private int id;
-
     public Beer() {
 
     }
@@ -52,9 +41,16 @@ public class Beer extends RealmObject implements Serializable {
     private String malt;
     private String hops;
 
+    @PrimaryKey
+    private String id;
 
+    public String getId() {
+        return id;
+    }
 
-
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getMalt() {
         return malt;

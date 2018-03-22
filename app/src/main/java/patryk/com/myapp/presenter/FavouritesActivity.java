@@ -39,7 +39,7 @@ public class FavouritesActivity extends AppCompatActivity {
 
 
     private void setUpRecyclerViewAndAdapter() {
-        recyclerView = findViewById(R.id.recyclerViewID);
+        recyclerView = findViewById(R.id.favouritesRecyclerViewID);
         recyclerView.setHasFixedSize(true);
         linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
