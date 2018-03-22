@@ -48,7 +48,7 @@ public class BeerDAO {
         });
     }
 
-    public List<Beer> getallBeers(){
+    public List<Beer> getAllBeers(){
         RealmResults<Beer> results = realm.where(Beer.class).findAll();
 
         return results;

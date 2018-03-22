@@ -76,10 +76,13 @@ public class BeerRecyclerViewAdapter extends RecyclerView.Adapter<BeerRecyclerVi
                 @Override
                 public void onClick(View v) {
                     Beer beer = beerList.get(getAdapterPosition());
-                    Intent intent = new Intent(context, BeerDetailsActivity.class);
-                    Gson gson = new Gson();
-                    String beerAsString = gson.toJson(beer);
-                    intent.putExtra("beer", beerAsString);
+                      Intent intent = new Intent(context, BeerDetailsActivity.class);
+//                    Gson gson = new Gson();
+//                    String beerAsString = gson.toJson(beer);
+//                    intent.putExtra("beer", beerAsString);
+
+                    intent.putExtra("beer", beer);
+
                     ctx.startActivity(intent);
                 }
             });

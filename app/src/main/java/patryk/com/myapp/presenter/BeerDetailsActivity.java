@@ -43,9 +43,10 @@ public class BeerDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_activity);
 
-        Gson gson = new Gson();
-        String beerAsString = getIntent().getStringExtra("beer");
-        beer = gson.fromJson(beerAsString, Beer.class);
+//        Gson gson = new Gson();
+//        String beerAsString = getIntent().getStringExtra("beer");
+//        beer = gson.fromJson(beerAsString, Beer.class);
+        beer = getIntent().getExtras().getParcelable("beer");
 
 
         setUpViews();

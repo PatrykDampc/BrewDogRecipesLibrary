@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import patryk.com.myapp.R;
@@ -27,7 +26,7 @@ public class FavouritesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_favourites);
 
         beerDAO = new BeerDAO(this);
-        beerList = beerDAO.getallBeers();
+        beerList = beerDAO.getAllBeers();
 
         setUpRecyclerViewAndAdapter();
 
